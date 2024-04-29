@@ -6,6 +6,7 @@ def canUnlockAll(boxes):
     """checks if all boxes can be unlocked"""
     if not boxes or not boxes[0]:
         return False
+
     opened_boxes = set([0])
     keys_available = boxes[0]
 
