@@ -15,19 +15,6 @@ if (process.argv.length > 2) {
       const movieData = JSON.parse(body);
       const characterUrls = movieData.characters;
 
-      // characterUrls.forEach(url => {
-      //   request(url, (charErr, charResponse, charBody) => {
-      //     if (charErr) {
-      //       console.error('Error fetching character data', error);
-      //     } else if (charResponse.statusCode != 200) {
-      //       console.error('Failed to retrieve character data. Status code:', charResponse.statusCode);
-      //     } else {
-      //       characterData = JSON.parse(charBody);
-      //       console.log(characterData.name);
-      //     }
-      //   })
-      // });
-
       const characters = characterUrls.map(
         url => new Promise((resolve, reject) => {
           request(url, (charErr, _, charBody) => {
